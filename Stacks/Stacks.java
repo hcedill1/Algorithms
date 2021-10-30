@@ -1,3 +1,5 @@
+
+
 public class Stacks{ 
 
     private int maxSize; 
@@ -17,8 +19,13 @@ public class Stacks{
      */
     public void push(long j){
 
-        top++; 
-        stackArray[top] = j;
+        if(isFull()){
+            System.out.println("Stack is already full");
+        }else{
+            top++; 
+            stackArray[top] = j;
+        }
+        
         
     }
 
@@ -30,9 +37,16 @@ public class Stacks{
      */
 
     public long pop(){
-        int old_top = top; 
-        top--;
-        return stackArray[old_top];
+        if(isEmpty()){
+            System.out.println("Stack is empty you cannot pop anymore");
+            return -1;
+        }else{
+            
+            int old_top = top; 
+            top--;
+            return stackArray[old_top];
+        }
+        
     }
     /**
      * this will be checking the current index that top is in and go into the array
@@ -56,7 +70,7 @@ public class Stacks{
      * @return
      */
     public boolean isFull(){
-        return (maxSize-1 == top);
+               return maxSize - 1 == top;
     }
 
 
