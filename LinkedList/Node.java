@@ -1,3 +1,5 @@
+import javax.sound.sampled.SourceDataLine;
+
 /**
  * Linked list is a data structure that store a collection of items 
  * drawbacks for arrays, if you intert items more than the size 
@@ -20,8 +22,8 @@ public class Node{
     Node next = null; 
     int data; 
 
-    
-
-
+    public void displayNode(){ 
+        System.out.println("{" + data + "}");
+    }
 
 }
